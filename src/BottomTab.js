@@ -4,16 +4,45 @@ import Home from './pages/Home';
 import Ranking from './pages/Ranking';
 import Scan from './pages/Scan'
 
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon  from 'react-native-vector-icons/MaterialIcons'
 
-const Tab = createBottomTabNavigator();
+
+
+const Tab = createMaterialBottomTabNavigator();
+Icon.loadFont();
 
 export default function MyTabs() {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Scan" component={Scan} />
-      <Tab.Screen name="Ranking" component={Ranking} />
+    <Tab.Navigator barStyle={{backgroundColor:"black"}}>
+       <Tab.Screen name="Home" 
+       component={Home}
+       options={{
+        tabBarLabel: 'Home',
+        tabBarIcon: ({ color }) => (
+          <MaterialCommunityIcons name="beer" color={color} size={26} />
+        ),
+      }}
+        />
+      <Tab.Screen name="Scan"
+       component={Scan}
+       options={{
+        tabBarLabel: 'Scan',
+        tabBarIcon: ({ color }) => (
+          <MaterialCommunityIcons name="camera" color={color} size={26} />
+        ),
+      }}
+        />
+      <Tab.Screen name="Ranking"
+       component={Ranking}
+       options={{
+        tabBarLabel: 'Ranking',
+        tabBarIcon: ({ color }) => (
+          <Icon name="insert-chart" color={color} size={26} />
+        ),
+      }}
+       />
     </Tab.Navigator>
   );
 }
