@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import { AppRegistry } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 
 import BottomTab from './src/BottomTab';
@@ -11,3 +11,5 @@ export default function App() {
     </NavigationContainer>
   );
 }
+
+AppRegistry.registerComponent('main', () => App);
