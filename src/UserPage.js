@@ -15,7 +15,11 @@ Icon.loadFont();
 
 export default function UserPage() {
   return (
-    <Tab.Navigator barStyle={{ backgroundColor: "black" }}>
+    <Tab.Navigator
+      activeColor="#FFAC2C"
+      inactiveColor="#D3CEC4"
+      barStyle={{ backgroundColor: '#1F2933' }}>
+
       <Tab.Screen name="Home"
         component={Home}
         options={{
