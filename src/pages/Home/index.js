@@ -12,9 +12,9 @@ Icon.loadFont();
 export default function Home() {
 
   const [state, setState] = useState([true]);
-  const [stateLgbt, setStateLgbt] = useState([false]);
-  const [stateAmbev, setStateAmbev] = useState([false]);
-  const [stateExpensive, setStateExpensive] = useState([false]);
+  const [stateLgbt, setStateLgbt] = useState([true]);
+  const [stateAmbev, setStateAmbev] = useState([true]);
+  const [stateExpensive, setStateExpensive] = useState([true]);
   const [lgbt, setLgbt] = useState([false]);
   const [ambev, setAmbev] = useState([false]);
   const [expensive, setExpensive] = useState([false]);
@@ -49,17 +49,17 @@ export default function Home() {
     }
   }
   function showBars(){
-    if (lgbt == true) {
+    if (lgbt == false) {
       setStateLgbt({ show: true });
     } else {
       setStateLgbt({ show: false });
     }
-    if (ambev == true) {
+    if (ambev == false) {
       setStateAmbev({ show: true });
     } else {
       setStateAmbev({ show: false });
     }
-    if (expensive == true) {
+    if (expensive == false) {
       setStateExpensive({ show: true });
     } else {
       setStateExpensive({ show: false });
@@ -107,7 +107,7 @@ export default function Home() {
         <Text>Search</Text>
         <Icon name="search" color="black" size={26} />
       </TouchableOpacity>
-
+      <ScrollView horizontal={true}>
       {
         stateLgbt.show ? (
           <Image source={lgbtImg} />
@@ -123,6 +123,8 @@ export default function Home() {
           <Image source={expensiveImg} />
         ) : null
       }
+      </ScrollView>
+     
 
 
 
