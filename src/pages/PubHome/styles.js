@@ -12,4 +12,60 @@ export default StyleSheet.create({
         backgroundColor: '#F8F8F2'
     },
 
+    dropdown: {
+        width: '93%',
+        marginBottom: 10,
+        height: 60,
+    },
+
+    subTitle: {
+        color: 'black',
+        fontSize: 24,
+        fontWeight: 'bold',
+        marginBottom: 20
+    },
+
+    buttons: {
+        backgroundColor: 'black',
+        width: 300,
+        height: 60,
+        margin: 5,
+        marginBottom: 10,
+        padding: 5,
+        borderRadius: 8,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+
+    buttonText: {
+        color: '#FFF',
+        fontSize: 22,
+        fontWeight: 'bold',
+    },
+
+    buttonView: {
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+    },
+
+    productList: {
+        width: '90%',
+    },
+
+    product: {
+        backgroundColor: '#eaeaea',
+        borderWidth: 2,
+        borderColor: "#b2b2b2",
+        padding: 5,
+        margin: 2,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+
+    productText: {
+        fontWeight: 'bold',
+        fontSize: 14
+    }
+
 });

@@ -1,43 +1,67 @@
-import React, { useState, useEffect } from 'react';
-import { Text, View, StyleSheet, Button } from 'react-native';
-import { BarCodeScanner } from 'expo-barcode-scanner';
+import React, { useState } from 'react';
+import { Text, View, TouchableOpacity, FlatList } from 'react-native';
+import DropDownPicker from 'react-native-dropdown-picker';
 
-export default function Scan() {
-    const [hasPermission, setHasPermission] = useState(null);
-    const [scanned, setScanned] = useState(false);
+import styles from './styles';
 
-    useEffect(() => {
-        (async () => {
-            const { status } = await BarCodeScanner.requestPermissionsAsync();
-            setHasPermission(status === 'granted');
-        })();
-    }, []);
+import Modal from './Modal/Modal';
 
-    const handleBarCodeScanned = ({ type, data }) => {
-        setScanned(true);
-        alert(`Bar code with type ${type} and data ${data} has been scanned!`);
-    };
+let totalValue = 0;
 
-    if (hasPermission === null) {
-        return <Text>Requesting for camera permission</Text>;
-    }
-    if (hasPermission === false) {
-        return <Text>No access to camera</Text>;
+export default function PubHome() {
+    const [state, setState] = useState([]);
+    const [selected, setSelected] = useState();
+
+    function addItem() {
+        setState([...state, selected]);
+        totalValue += Number(selected.value);
     }
 
     return (
-        <View
-            style={{
-                flex: 1,
-                flexDirection: 'column',
-                justifyContent: 'flex-end',
-            }}>
-            <BarCodeScanner
-                onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
-                style={StyleSheet.absoluteFillObject}
+        <View style={styles.container}>
+
+            <Text style={styles.subTitle}>Gerar Comanda</Text>
+
+            <DropDownPicker
+                items={[
+                    { label: 'Cerveja 500ml', value: '500' },
+                    { label: 'Cerveja 750ml', value: '750' },
+                    { label: 'Cerveja 1L', value: '1000' },
+                ]}
+                placeholder={"Selecione um Item"}
+                containerStyle={styles.dropdown}
+                dropDownStyle={{ backgroundColor: '#fafafa' }}
+                onChangeItem={item => setSelected({
+                    product: item.label,
+                    value: item.value
+                })}
             />
 
-            {scanned && <Button title={'Tap to Scan Again'} onPress={() => setScanned(false)} />}
+            <FlatList
+                style={styles.productList}
+                data={state}
+                keyExtractor={(item, index) => index.toString()}
+                showsVerticalScrollIndicator={false}
+                onEndReachedThreshold={0.2}
+                renderItem={({ item: cases }) => (
+                    <View style={styles.product}>
+                        <Text style={styles.productText}>{cases.product}</Text>
+                    </View>
+                )}
+            />
+
+            <View style={styles.buttonView}>
+                <TouchableOpacity
+                    style={styles.buttons}
+                    onPress={() => addItem()}>
+                    <Text style={styles.buttonText}>Adicionar item</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.buttons}>
+                    <Modal value={totalValue} />
+                </TouchableOpacity>
+            </View>
+
         </View>
     );
 }
