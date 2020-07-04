@@ -107,7 +107,7 @@ export default function Home() {
         <Text>Search</Text>
         <Icon name="search" color="black" size={26} />
       </TouchableOpacity>
-
+      <ScrollView horizontal={true}>
       {
         stateLgbt.show ? (
           <Image source={lgbtImg} />
@@ -123,6 +123,8 @@ export default function Home() {
           <Image source={expensiveImg} />
         ) : null
       }
+      </ScrollView>
+     
 
 
 
