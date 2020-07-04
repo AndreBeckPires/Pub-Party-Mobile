@@ -58,7 +58,7 @@ export default function PubHome() {
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.buttons}>
-                    <Modal value={totalValue} />
+                    <Modal value={totalValue.toString()} />
                 </TouchableOpacity>
             </View>
 
