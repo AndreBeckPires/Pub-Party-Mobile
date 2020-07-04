@@ -47,61 +47,63 @@ export default function Bares() {
   }, []);
 
   return (
-    <View>
-
-
-
+    <View style={styles.container}>
+      <TouchableOpacity
+        onPress={() => navigateBack()}>
+        <Icon style={styles.back} name="arrow-back" />
+      </TouchableOpacity>
       {
         state1.show ? (
-          <View>
-            <Image source={barLgbt} />
-            <Text> Dados do bar LGBT</Text>
+          <View style={styles.container}>
+            <Image style={styles.images} source={barLgbt} />
+            <Text style={styles.textH1}>LGBT</Text>
+            <Text style={styles.text}>AQUI VAO OS DADOS SOBRE O BAR AHSUIDHASUIDHASUIODHASIUDOHASDIUAHSDUIASHDIUAHSDIUASHDIUASHDIUSADHIASGYUDGSAUYDGASDUYAGSDUYASGDUYASGDUASYDGASUYDGSAUYDGSAUYDGASUYDGSADUYAGSddYUASGDUYASGIDYIUGDSUYUGAYUASGDYUIAYUAGSDUYISGASDYSAGDYUA</Text>
           </View>
         ) : null
       }
       {
         state2.show ? (
-          <View>
-            <Image source={barAmbev} />
-            <Text> Dados do bar Ambev</Text>
+          <View style={styles.container}>
+            <Image style={styles.images} source={barAmbev} />
+            <Text style={styles.textH1}>Ambev</Text>
+
+            <Text style={styles.text}>AQUI VAO OS DADOS SOBRE O BAR AHSUIDHASUIDHASUIODHASIUDOHASDIUAHSDUIASHDIUAHSDIUASHDIUASHDIUSADHIASGYUDGSAUYDGASDUYAGSDUYASGDUYASGDUASYDGASUYDGSAUYDGSAUYDGASUYDGSADUYAGSddYUASGDUYASGIDYIUGDSUYUGAYUASGDYUIAYUAGSDUYISGASDYSAGDYUA</Text>
+
           </View>
         ) : null
       }
 
       {
         state3.show ? (
-          <View>
-            <Image source={barExpensive} />
-            <Text> Dados do bar Expensive</Text>
+          <View style={styles.container}>
+            <Image style={styles.images} source={barExpensive} />
+            <Text style={styles.textH1}>Expensive</Text>
+            <Text style={styles.text}>AQUI VAO OS DADOS SOBRE O BAR AHSUIDHASUIDHASUIODHASIUDOHASDIUAHSDUIASHDIUAHSDIUASHDIUASHDIUSADHIASGYUDGSAUYDGASDUYAGSDUYASGDUYASGDUASYDGASUYDGSAUYDGSAUYDGASUYDGSADUYAGSddYUASGDUYASGIDYIUGDSUYUGAYUASGDYUIAYUAGSDUYISGASDYSAGDYUA</Text>
+            <Text>Horario de funcionamento: </Text>
           </View>
         ) : null
       }
-      <TouchableOpacity
-        onPress={() => navigateBack()}>
 
-        <Icon name="arrow-back" color="black" size={26} />
-        <Text>Voltar</Text>
-      </TouchableOpacity>
 
       <TouchableOpacity
         onPress={() => showModal()}>
-        <MaterialCommunityIcons name="account-group" color={'black'} size={26} />
-        <Text>Formar grupo</Text>
-      </TouchableOpacity>
-    
+        <MaterialCommunityIcons style={styles.group} name="account-group" />
 
-     <View style={{ flex: 1 }}>
-    
+      </TouchableOpacity>
+
+
+      <View style={{ flex: 1 }}>
+
 
         <Modal isVisible={isModalVisible}>
           <View style={{ flex: 1, backgroundColor: 'white' }}>
             <Text>Forme sua party</Text>
-            
+
             <TouchableOpacity
-        onPress={() => showModal()}>
-       <Icon name="arrow-back" color="black" size={26} />
-        <Text>Voltar</Text>
-      </TouchableOpacity>
+              onPress={() => showModal()}>
+              <Icon name="arrow-back" color="#D3CEC4" size={26} />
+              <Text>Voltar</Text>
+            </TouchableOpacity>
           </View>
         </Modal>
       </View>
