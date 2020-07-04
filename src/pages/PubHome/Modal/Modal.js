@@ -9,7 +9,6 @@ import QRCode from 'react-native-qrcode-svg';
 export default class QrCodeModal extends Component {
     state = {
         isModalVisible: false,
-        valueForQRCode: this.props.value,
     };
 
 
@@ -27,11 +26,13 @@ export default class QrCodeModal extends Component {
 
                         <View style={styles.sectionInfo}>
                             <Text style={styles.sectionTitle}>Scaneie para pontuar! </Text>
+                            <Text style={styles.sectionTitle}>{this.props.value} </Text>
+
                         </View>
 
                         <View style={styles.qrCodeView}>
                             <QRCode
-                                value={this.state.value}
+                                value={this.props.value ? this.props.value : '0'}
                                 size={250}
                                 color="black"
                                 backgroundColor="white"

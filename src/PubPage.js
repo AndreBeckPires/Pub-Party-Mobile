@@ -25,10 +25,9 @@ export default function PubPage() {
             <Tab.Screen name="PubRanking"
                 component={PubRanking}
                 options={{
-                    tabBarLabel: 'Scan',
+                    tabBarLabel: 'Ranking',
                     tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="camera" color={color} size={26} />
-                    ),
+                        <Icon name="insert-chart" color={color} size={26} />),
                 }}
             />
         </Tab.Navigator>

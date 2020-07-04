@@ -6,7 +6,7 @@ import Scan from './pages/Scan'
 
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import Icon  from 'react-native-vector-icons/MaterialIcons'
+import Icon from 'react-native-vector-icons/MaterialIcons'
 
 
 
@@ -15,34 +15,34 @@ Icon.loadFont();
 
 export default function UserPage() {
   return (
-    <Tab.Navigator barStyle={{backgroundColor:"black"}}>
-       <Tab.Screen name="Home" 
-       component={Home}
-       options={{
-        tabBarLabel: 'Home',
-        tabBarIcon: ({ color }) => (
-          <MaterialCommunityIcons name="beer" color={color} size={26} />
-        ),
-      }}
-        />
+    <Tab.Navigator barStyle={{ backgroundColor: "black" }}>
+      <Tab.Screen name="Home"
+        component={Home}
+        options={{
+          tabBarLabel: 'Home',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="beer" color={color} size={26} />
+          ),
+        }}
+      />
       <Tab.Screen name="Scan"
-       component={Scan}
-       options={{
-        tabBarLabel: 'Scan',
-        tabBarIcon: ({ color }) => (
-          <MaterialCommunityIcons name="camera" color={color} size={26} />
-        ),
-      }}
-        />
+        component={Scan}
+        options={{
+          tabBarLabel: 'Scan',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="camera" color={color} size={26} />
+          ),
+        }}
+      />
       <Tab.Screen name="Ranking"
-       component={Ranking}
-       options={{
-        tabBarLabel: 'Ranking',
-        tabBarIcon: ({ color }) => (
-          <Icon name="insert-chart" color={color} size={26} />
-        ),
-      }}
-       />
+        component={Ranking}
+        options={{
+          tabBarLabel: 'Ranking',
+          tabBarIcon: ({ color }) => (
+            <Icon name="insert-chart" color={color} size={26} />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 }
