@@ -32,8 +32,8 @@ export default function Home() {
   const [expensive, setExpensive] = useState([false]);
 
   function navigateToBares(tag) {
-    navigation.navigate('Bares', {tag});
-}
+    navigation.navigate('Bares', { tag });
+  }
 
   function ShowHideComponent() {
     if (state.show == true) {
@@ -42,29 +42,29 @@ export default function Home() {
       setState({ show: true });
     }
   }
-  function selectLGBT(){
-    if(lgbt == false){
+  function selectLGBT() {
+    if (lgbt == false) {
       setLgbt(true);
-    }else{
+    } else {
       setLgbt(false);
     }
-    
+
   }
-  function selectAMBEV(){
-    if(ambev == false){
+  function selectAMBEV() {
+    if (ambev == false) {
       setAmbev(true);
-    }else{
+    } else {
       setAmbev(false);
     }
   }
-  function selectExpensive(){
-    if(expensive == false){
+  function selectExpensive() {
+    if (expensive == false) {
       setExpensive(true);
-    }else{
+    } else {
       setExpensive(false);
     }
   }
-  function showBars(){
+  function showBars() {
     if (lgbt == false) {
       setStateLgbt({ show: true });
     } else {
@@ -80,7 +80,7 @@ export default function Home() {
     } else {
       setStateExpensive({ show: false });
     }
-    
+
 
   }
 
@@ -113,7 +113,7 @@ export default function Home() {
               onPress={() => selectExpensive()}>
               <Image source={expensiveImg} />
             </TouchableOpacity>
-         
+
           </ScrollView>
 
         ) : null
@@ -123,40 +123,50 @@ export default function Home() {
         <Text>Search</Text>
         <Icon name="search" color="black" size={26} />
       </TouchableOpacity>
-      <ScrollView horizontal={true}>
-      {
-        stateLgbt.show ? (
-          <TouchableOpacity
-          onPress={() => navigateToBares(1)}>
-           <Image source={barLgbt} />
-          
-        </TouchableOpacity>
-         
-        ) : null
-      }
-      {
-        stateAmbev.show ? (
-          <TouchableOpacity
-          onPress={() => navigateToBares(2)}>
-           <Image source={barAmbev} />
-          
-        </TouchableOpacity>
-        ) : null
-      }
-      {
-        stateExpensive.show ? (
-          <TouchableOpacity
-          onPress={() => navigateToBares(3)}>
-           <Image source={barExpensive} />
-          
-        </TouchableOpacity>
-        ) : null
-      }
+      <ScrollView>
+        {
+          stateLgbt.show ? (<View style={styles.bares}>
+            <TouchableOpacity
+              onPress={() => navigateToBares(1)}>
+              <Image style={styles.images} source={barLgbt}
+              />
+
+            </TouchableOpacity>
+          </View>
+          ) : null
+        }
+        {
+          stateAmbev.show ? (
+            <View style={styles.bares}>
+              <TouchableOpacity
+                onPress={() => navigateToBares(2)}>
+                
+                <Image source={barAmbev}
+                  style={styles.images} />
+               
+               <Text style={styles.baresText}>BAR DO ARTHUR</Text>
+              </TouchableOpacity>
+
+            </View>
+          ) : null
+        }
+        {
+          stateExpensive.show ? (
+            <View style={styles.bares}>
+              <TouchableOpacity
+                onPress={() => navigateToBares(3)}>
+                <Image source={barExpensive}
+                  style={styles.images} />
+
+              </TouchableOpacity>
+            </View>
+          ) : null
+        }
       </ScrollView>
-     
+    </View>
 
 
 
-    </View >
+
   );
 }

@@ -7,14 +7,15 @@ import styles from './styles';
 export default function Bares() {
   const navigation = useNavigation();
   const route = useRoute();
-
+  const [state, setState] = useState([true]);
   const {tag} = route.params;
   return (
+
     <View>
-      <Text >{tag}</Text>    
-      <Text >{tag}</Text>  
-      <Text >{tag}</Text>  
-      <Text >{tag}</Text>  
+      <Text >1</Text>    
+      <Text >2</Text>  
+      <Text >3</Text>  
+  
         
 
     </View>
