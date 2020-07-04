@@ -3,14 +3,22 @@ import { Text, View, ScrollView, Image, Button, TouchableOpacity } from 'react-n
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
 import styles from './styles';
-import img1 from '../../assets/1.png';
-import img2 from '../../assets/2.jpg';
+import ambevImg from '../../assets/ambev.png';
+import lgbtImg from '../../assets/lgbt.png';
+import expensiveImg from '../../assets/expensive.png';
+
 Icon.loadFont();
 
 export default function Home() {
 
   const [state, setState] = useState([true]);
-  const [state2, setState2] = useState([false]);
+  const [stateLgbt, setStateLgbt] = useState([false]);
+  const [stateAmbev, setStateAmbev] = useState([false]);
+  const [stateExpensive, setStateExpensive] = useState([false]);
+  const [lgbt, setLgbt] = useState([false]);
+  const [ambev, setAmbev] = useState([false]);
+  const [expensive, setExpensive] = useState([false]);
+
   function ShowHideComponent() {
     if (state.show == true) {
       setState({ show: false });
@@ -18,18 +26,54 @@ export default function Home() {
       setState({ show: true });
     }
   }
-  function ShowHideComponent2() {
-    if (state2.show == true) {
-      setState2({ show: false });
-    } else {
-      setState2({ show: true });
+  function selectLGBT(){
+    if(lgbt == false){
+      setLgbt(true);
+    }else{
+      setLgbt(false);
+    }
+    
+  }
+  function selectAMBEV(){
+    if(ambev == false){
+      setAmbev(true);
+    }else{
+      setAmbev(false);
     }
   }
+  function selectExpensive(){
+    if(expensive == false){
+      setExpensive(true);
+    }else{
+      setExpensive(false);
+    }
+  }
+  function showBars(){
+    if (lgbt == true) {
+      setStateLgbt({ show: true });
+    } else {
+      setStateLgbt({ show: false });
+    }
+    if (ambev == true) {
+      setStateAmbev({ show: true });
+    } else {
+      setStateAmbev({ show: false });
+    }
+    if (expensive == true) {
+      setStateExpensive({ show: true });
+    } else {
+      setStateExpensive({ show: false });
+    }
+    
+
+  }
+
+
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity
 
+      <TouchableOpacity
         onPress={() => ShowHideComponent()}>
         <Text>Selecionar filtros</Text>
         <Icon name="search" color="black" size={26} />
@@ -41,54 +85,46 @@ export default function Home() {
             horizontal={true}
           >
             <TouchableOpacity
-
-              onPress={() => ShowHideComponent2()}>
-              <Image source={img1} />
+              onPress={() => selectAMBEV()}
+            >
+              <Image source={ambevImg} />
             </TouchableOpacity>
-
-            <Image source={img1} />
-            <Image source={img1} />
-            <Image source={img1} />
-            <Image source={img1} />
-            <Image source={img1} />
-            <Image source={img1} />
-            <Image source={img1} />
-            <Image source={img1} />
-            <Image source={img1} />
-            <Image source={img1} />
-            <Image source={img1} />
-            <Image source={img1} />
-            <Image source={img1} />
-            <Image source={img1} />
-            <Image source={img1} />
-            <Image source={img1} />
-            <Image source={img1} />
-            <Image source={img1} />
-            <Image source={img1} />
-            <Image source={img1} />
-            <Image source={img1} />
-            <Image source={img1} />
-            <Image source={img1} />
-            <Image source={img1} />
-            <Image source={img1} />
-            <Image source={img1} />
-            <Image source={img1} />
-            <Image source={img1} />
-            <Image source={img1} />
-            <Image source={img1} />
-
-
+            <TouchableOpacity
+              onPress={() => selectLGBT()}>
+              <Image source={lgbtImg} />
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => selectExpensive()}>
+              <Image source={expensiveImg} />
+            </TouchableOpacity>
+         
           </ScrollView>
 
         ) : null
       }
+      <TouchableOpacity
+        onPress={() => showBars()}>
+        <Text>Search</Text>
+        <Icon name="search" color="black" size={26} />
+      </TouchableOpacity>
+
       {
-        state2.show ? (
-
-          <Image source={img2} />
-
+        stateLgbt.show ? (
+          <Image source={lgbtImg} />
         ) : null
       }
+      {
+        stateAmbev.show ? (
+          <Image source={ambevImg} />
+        ) : null
+      }
+      {
+        stateExpensive.show ? (
+          <Image source={expensiveImg} />
+        ) : null
+      }
+
+
 
     </View >
   );
