@@ -2,8 +2,8 @@ import * as React from 'react';
 
 import Home from './pages/Home';
 import Ranking from './pages/Ranking';
-import Scan from './pages/Scan'
-
+import Scan from './pages/Scan';
+import Bares from './pages/Bares';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Icon from 'react-native-vector-icons/MaterialIcons'

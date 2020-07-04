@@ -8,6 +8,8 @@ import Login from './src/pages/Login';
 import UserPage from './src/UserPage';
 import PubPage from './src/PubPage';
 
+import Bares from './src/pages/Bares'
+
 const AppStack = createStackNavigator();
 
 export default function App() {
@@ -17,6 +19,7 @@ export default function App() {
         <AppStack.Screen name="Login" component={Login} />
         <AppStack.Screen name="UserPage" component={UserPage} />
         <AppStack.Screen name="PubPage" component={PubPage} />
+        <AppStack.Screen name="Bares" component={Bares} />
       </AppStack.Navigator>
     </NavigationContainer>
   );

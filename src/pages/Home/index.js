@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Text, View, ScrollView, Image, Button, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
+import { useNavigation, useRoute } from '@react-navigation/native'
+
+import Bares from '../Bares';
+
 import styles from './styles';
 import ambevImg from '../../assets/ambev.png';
 import lgbtImg from '../../assets/lgbt.png';
@@ -14,6 +18,11 @@ Icon.loadFont();
 
 export default function Home() {
 
+  const navigation = useNavigation();
+  const route = useRoute();
+
+
+
   const [state, setState] = useState([true]);
   const [stateLgbt, setStateLgbt] = useState([true]);
   const [stateAmbev, setStateAmbev] = useState([true]);
@@ -21,6 +30,10 @@ export default function Home() {
   const [lgbt, setLgbt] = useState([false]);
   const [ambev, setAmbev] = useState([false]);
   const [expensive, setExpensive] = useState([false]);
+
+  function navigateToBares(tag) {
+    navigation.navigate('Bares', {tag});
+}
 
   function ShowHideComponent() {
     if (state.show == true) {
@@ -113,17 +126,30 @@ export default function Home() {
       <ScrollView horizontal={true}>
       {
         stateLgbt.show ? (
-          <Image source={barLgbt} />
+          <TouchableOpacity
+          onPress={() => navigateToBares(1)}>
+           <Image source={barLgbt} />
+          
+        </TouchableOpacity>
+         
         ) : null
       }
       {
         stateAmbev.show ? (
-          <Image source={barAmbev} />
+          <TouchableOpacity
+          onPress={() => navigateToBares(2)}>
+           <Image source={barAmbev} />
+          
+        </TouchableOpacity>
         ) : null
       }
       {
         stateExpensive.show ? (
-          <Image source={barExpensive} />
+          <TouchableOpacity
+          onPress={() => navigateToBares(3)}>
+           <Image source={barExpensive} />
+          
+        </TouchableOpacity>
         ) : null
       }
       </ScrollView>
