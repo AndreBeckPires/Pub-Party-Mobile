@@ -9,7 +9,7 @@ export default StyleSheet.create({
         alignItems: 'center',
         paddingHorizontal: 24,
         paddingTop: Constants.statusBarHeight + 20,
-        backgroundColor: '#F8F8F2'
+        backgroundColor: '#121212'
     },
 
     dropdown: {
@@ -26,7 +26,7 @@ export default StyleSheet.create({
     },
 
     buttons: {
-        backgroundColor: 'black',
+        backgroundColor: '#FFAC2C',
         width: 300,
         height: 60,
         margin: 5,

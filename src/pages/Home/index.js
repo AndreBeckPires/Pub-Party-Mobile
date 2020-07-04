@@ -21,8 +21,6 @@ export default function Home() {
   const navigation = useNavigation();
   const route = useRoute();
 
-
-
   const [state, setState] = useState([true]);
   const [stateLgbt, setStateLgbt] = useState([true]);
   const [stateAmbev, setStateAmbev] = useState([true]);

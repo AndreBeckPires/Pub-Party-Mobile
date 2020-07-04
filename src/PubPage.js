@@ -12,7 +12,11 @@ Icon.loadFont();
 
 export default function PubPage() {
     return (
-        <Tab.Navigator barStyle={{ backgroundColor: "black" }}>
+        <Tab.Navigator
+            activeColor="#FFAC2C"
+            inactiveColor="#D3CEC4"
+            barStyle={{ backgroundColor: '#1F2933' }}>
+                
             <Tab.Screen name="PubHome"
                 component={PubHome}
                 options={{
