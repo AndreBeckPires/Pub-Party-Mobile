@@ -6,6 +6,9 @@ import styles from './styles';
 import ambevImg from '../../assets/ambev.png';
 import lgbtImg from '../../assets/lgbt.png';
 import expensiveImg from '../../assets/expensive.png';
+import barAmbev from '../../assets/barambev.png';
+import barLgbt from '../../assets/barlgbt.png';
+import barExpensive from '../../assets/barexpensive.png';
 
 Icon.loadFont();
 
@@ -110,17 +113,17 @@ export default function Home() {
       <ScrollView horizontal={true}>
       {
         stateLgbt.show ? (
-          <Image source={lgbtImg} />
+          <Image source={barLgbt} />
         ) : null
       }
       {
         stateAmbev.show ? (
-          <Image source={ambevImg} />
+          <Image source={barAmbev} />
         ) : null
       }
       {
         stateExpensive.show ? (
-          <Image source={expensiveImg} />
+          <Image source={barExpensive} />
         ) : null
       }
       </ScrollView>
