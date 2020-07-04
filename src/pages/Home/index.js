@@ -122,40 +122,50 @@ export default function Home() {
         <Text>Search</Text>
         <Icon name="search" color="black" size={26} />
       </TouchableOpacity>
-      <ScrollView horizontal={true}>
+      <ScrollView>
         {
-          stateLgbt.show ? (
+          stateLgbt.show ? (<View style={styles.bares}>
             <TouchableOpacity
               onPress={() => navigateToBares(1)}>
-              <Image source={barLgbt} />
+              <Image style={styles.images} source={barLgbt}
+              />
 
             </TouchableOpacity>
-
+          </View>
           ) : null
         }
         {
           stateAmbev.show ? (
-            <TouchableOpacity
-              onPress={() => navigateToBares(2)}>
-              <Image source={barAmbev} />
+            <View style={styles.bares}>
+              <TouchableOpacity
+                onPress={() => navigateToBares(2)}>
+                
+                <Image source={barAmbev}
+                  style={styles.images} />
+               
+               <Text style={styles.baresText}>BAR DO ARTHUR</Text>
+              </TouchableOpacity>
 
-            </TouchableOpacity>
+            </View>
           ) : null
         }
         {
           stateExpensive.show ? (
-            <TouchableOpacity
-              onPress={() => navigateToBares(3)}>
-              <Image source={barExpensive} />
+            <View style={styles.bares}>
+              <TouchableOpacity
+                onPress={() => navigateToBares(3)}>
+                <Image source={barExpensive}
+                  style={styles.images} />
 
-            </TouchableOpacity>
+              </TouchableOpacity>
+            </View>
           ) : null
         }
       </ScrollView>
+    </View>
 
 
 
 
-    </View >
   );
 }
