@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { Text, View, TouchableOpacity } from 'react-native';
+import { Text, View, TouchableOpacity, Image } from 'react-native';
 import Leaderboard from 'react-native-leaderboard';
+
+import logoImg from '../../assets/user-icon.png';
 
 import styles from './styles';
 
@@ -34,6 +36,23 @@ export default function PubRanking() {
     <View style={styles.container}>
       <Text style={styles.title}>Ranking</Text>
 
+      <View style={styles.header}>
+        <View style={styles.topUser}>
+          <Text style={styles.topUserName}>{data[0].userName}</Text>
+          <Image style={styles.topUserImg} source={logoImg} />
+        </View>
+
+        <View style={styles.topUser1}>
+          <Text style={styles.topUserName}>{data[1].userName}</Text>
+          <Image style={styles.topUserImg1} source={logoImg} />
+        </View>
+
+        <View style={styles.topUser}>
+          <Text style={styles.topUserName}>{data[2].userName}</Text>
+          <Image style={styles.topUserImg} source={logoImg} />
+        </View>
+      </View>
+
       <View style={styles.buttonView}>
         <TouchableOpacity
           style={styles.buttons}
@@ -51,7 +70,15 @@ export default function PubRanking() {
       <Leaderboard
         data={dados}
         sortBy='highScore'
-        labelBy='userName' />
+        labelBy='userName'
+        icon={'imgUrl'}
+        rankStyle={styles.rankStyle}
+        containerStyyle={styles.rankContainer}
+        oddRowColor={'#323F4B'}
+        evenRowColor={'#1F2933'}
+        labelStyle={styles.labelStyle}
+        scoreStyle={styles.scoreStyle}
+      />
     </View>
   );
 }

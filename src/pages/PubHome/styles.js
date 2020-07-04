@@ -13,13 +13,13 @@ export default StyleSheet.create({
     },
 
     dropdown: {
-        width: '93%',
+        width: '90%',
         marginBottom: 10,
-        height: 60,
+        height: 56,
     },
 
-    subTitle: {
-        color: 'black',
+    title: {
+        color: '#FFAC2C',
         fontSize: 24,
         fontWeight: 'bold',
         marginBottom: 20
@@ -28,11 +28,10 @@ export default StyleSheet.create({
     buttons: {
         backgroundColor: '#FFAC2C',
         width: 300,
-        height: 60,
-        margin: 5,
+        height: 50,
         marginBottom: 10,
         padding: 5,
-        borderRadius: 8,
+        borderRadius: 4,
         justifyContent: 'center',
         alignItems: 'center'
     },
@@ -54,16 +53,17 @@ export default StyleSheet.create({
     },
 
     product: {
-        backgroundColor: '#eaeaea',
+        backgroundColor: '#323F4B',
         borderWidth: 2,
         borderColor: "#b2b2b2",
-        padding: 5,
+        padding: 10,
         margin: 2,
         justifyContent: 'center',
         alignItems: 'center',
     },
 
     productText: {
+        color: '#fff',
         fontWeight: 'bold',
         fontSize: 14
     }

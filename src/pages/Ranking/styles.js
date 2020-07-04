@@ -6,7 +6,7 @@ export default StyleSheet.create({
     title: {
         fontSize: 30,
         fontWeight: 'bold',
-        color: '#fff'
+        color: '#FFAC2C'
     },
 
     container: {

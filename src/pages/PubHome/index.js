@@ -20,7 +20,7 @@ export default function PubHome() {
     return (
         <View style={styles.container}>
 
-            <Text style={styles.subTitle}>Gerar Comanda</Text>
+            <Text style={styles.title}>Gerar QRCode</Text>
 
             <DropDownPicker
                 items={[
@@ -28,6 +28,7 @@ export default function PubHome() {
                     { label: 'Cerveja 750ml', value: '750' },
                     { label: 'Cerveja 1L', value: '1000' },
                 ]}
+                
                 placeholder={"Selecione um Item"}
                 containerStyle={styles.dropdown}
                 dropDownStyle={{ backgroundColor: '#fafafa' }}
