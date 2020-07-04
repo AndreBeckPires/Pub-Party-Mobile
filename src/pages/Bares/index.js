@@ -100,7 +100,7 @@ export default function Bares() {
             <TouchableOpacity
         onPress={() => showModal()}>
        <Icon name="arrow-back" color="black" size={26} />
-        <Text>Voltar para tela original</Text>
+        <Text>Voltar</Text>
       </TouchableOpacity>
           </View>
         </Modal>
