@@ -13,13 +13,15 @@ export default function Home() {
         navigation.navigate('UserPage');
     }
 
+    function navigateToPubPage() {
+        navigation.navigate('PubPage');
+    }
+
     return (
         <View style={styles.container}>
-            <View style={styles.buttonView}>-
+            <View style={styles.buttonView}>
 
-                <Image source={logo}
-                    style={styles.logoImage}
-                />
+                <Image source={logo} style={styles.logoImage} />
 
                 <TouchableOpacity
                     style={styles.buttons}
@@ -28,7 +30,8 @@ export default function Home() {
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                    style={styles.buttons}>
+                    style={styles.buttons}
+                    onPress={() => navigateToPubPage()}>
                     <Text style={styles.buttonText}>Entrar como Bar</Text>
                 </TouchableOpacity>
             </View>

@@ -13,7 +13,7 @@ import Icon  from 'react-native-vector-icons/MaterialIcons'
 const Tab = createMaterialBottomTabNavigator();
 Icon.loadFont();
 
-export default function MyTabs() {
+export default function UserPage() {
   return (
     <Tab.Navigator barStyle={{backgroundColor:"black"}}>
        <Tab.Screen name="Home" 
