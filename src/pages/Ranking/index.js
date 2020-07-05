@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Text, View, TouchableOpacity, Image } from 'react-native';
 import Leaderboard from 'react-native-leaderboard';
 
@@ -28,6 +28,10 @@ export default function Ranking() {
     { userName: 'Caio', highScore: 100, imgUrl: 'https://www.pngkey.com/png/full/950-9501315_katie-notopoulos-katienotopoulos-i-write-about-tech-user.png' },
   ]
 
+  useEffect(() => {
+   loadRanking(data);
+  }, []);
+  
   function loadRanking(data) {
     setDados(data);
   }

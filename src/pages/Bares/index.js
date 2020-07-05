@@ -6,7 +6,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import Modal from 'react-native-modal';
 import DropDownPicker from 'react-native-dropdown-picker';
 import { TextInput } from 'react-native-paper';
-
+import { Platform } from 'react-native';
 import styles from './styles';
 
 import barAmbev from '../../assets/barambev.jpg';
@@ -138,7 +138,13 @@ export default function Bares() {
             height: '10%',
             paddingTop: 10,
           }}>
-         
+         <View
+    style={{
+        ...(Platform.OS !== 'android' && {
+            zIndex: 10
+        })
+    }}
+>
          <DropDownPicker
                 items={[
                   { label: 'Arthur'},
@@ -154,7 +160,7 @@ export default function Bares() {
                     product: item.label,
         
                 })}
-            />
+            /></View>
 
             <FlatList
                 style={styles.productList}
