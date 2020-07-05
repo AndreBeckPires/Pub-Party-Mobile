@@ -69,5 +69,18 @@ export default StyleSheet.create({
         fontSize: 40,
         backgroundColor: '#323F4B',
     },
+    socialMedia: {
+        flexDirection: 'row',
+        margin: '110%',
+       
+    },
+    mediaImages:{
+        width: 40,
+        height: 40,
+        borderRadius: 400 / 2,
+        marginLeft: 20,
+        marginRight: 20,
+        
 
+    },
 });
