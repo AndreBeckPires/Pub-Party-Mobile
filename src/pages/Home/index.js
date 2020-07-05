@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Text, View, ScrollView, Image, TouchableOpacity, FlatList } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
@@ -22,7 +22,7 @@ export default function Home() {
   let data = [
     { name: 'Bar do Arthur', location: 'Cidade Baixa - Porto Alegre', lgbt: true, expensive: true, ambev: false, imgUrl: barLgbt },
     { name: 'Bar do André', location: 'Cidade Baixa - Porto Alegre', lgbt: true, expensive: true, ambev: false, imgUrl: barAmbev },
-    { name: 'Bar da Juliana', location: 'Cidade Baixa - Porto Alegre', lgbt: false, expensive: false, ambev: false, imgUrl: barExpensive },
+    { name: 'Bar da Juliana', location: 'Cidade Baixa - Porto Alegre', lgbt: false, expensive: true, ambev: false, imgUrl: barExpensive },
     { name: 'Bar do Caio', location: 'Cidade Baixa - Porto Alegre', lgbt: false, expensive: true, ambev: true, imgUrl: barAmbev },
     { name: 'Bar do Caio', location: 'Cidade Baixa - Porto Alegre', lgbt: false, expensive: true, ambev: true, imgUrl: barAmbev },
     { name: 'Bar do Caio', location: 'Cidade Baixa - Porto Alegre', lgbt: false, expensive: true, ambev: true, imgUrl: barAmbev },
@@ -36,7 +36,7 @@ export default function Home() {
   }
   useEffect(() => {
   
-    ShowHideComponent();
+    loadBares();
   }, []);
   
   function ShowHideComponent() {
@@ -46,9 +46,11 @@ export default function Home() {
       setState({ show: true });
     }
 
+    
+  }
+  function loadBares(){
     setBares(data);
   }
-
   return (
     <View style={styles.container}>
       <View style={styles.headerBar}>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Text, View, Image, TouchableOpacity, FlatList } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -12,6 +12,9 @@ import styles from './styles';
 import whats from '../../assets/wpp.png';
 import insta from '../../assets/instagram.png';
 import twitter from '../../assets/twitter.png';
+import ambevImg from '../../assets/ambev.png';
+import lgbtImg from '../../assets/lgbt.png';
+import expensiveImg from '../../assets/expensive.png';
 
 Icon.loadFont();
 
@@ -19,25 +22,42 @@ export default function Bares() {
   function navigateBack() {
     navigation.goBack();
   }
+
   const navigation = useNavigation();
   const route = useRoute();
   const [isModalVisible, setModalVisible] = useState(false);
   const [text, setText] = React.useState('');
-
   const [state, setState] = useState([]);
   const [selected, setSelected] = useState();
+  const [lgbt, setLgbt] = useState([false]);
+  const [ambev, setAmbev] = useState([false]);
+  const [expensive, setExpensive] = useState([false]);
+  const bares = route.params.bares;
+
+  useEffect(() => {
+    ShowHideComponent();
+  }, []);
+
+  function ShowHideComponent() {
+    if (bares.lgbt == true) {
+      setLgbt({ show: true });
+    }
+    if (bares.ambev == true) {
+      setAmbev({ show: true });
+    }
+    if (bares.expensive == true) {
+      setExpensive({ show: true });
+    }
+  }
 
   function addItem() {
     setState([...state, selected]);
     console.log(selected);
   }
 
-  const bares = route.params.bares;
-
   function showModal() {
     setModalVisible(!isModalVisible);
   }
-
 
   return (
     <View style={styles.container}>
@@ -45,20 +65,23 @@ export default function Bares() {
         onPress={() => navigateBack()}>
         <Icon style={styles.back} name="arrow-back" />
       </TouchableOpacity>
-
       <View>
         <View style={styles.telaBAR}>
           <Image style={styles.images} source={bares.imgUrl} />
         </View>
         <View style={styles.texts}>
           <Text style={styles.textH1}>{bares.name}</Text>
+          <View style={{ flexDirection: 'row' }}>
+            { ambev.show ? (<Image isVisible={bares.ambev} source={ambevImg} /> ) : null}
+            { lgbt.show ? (<Image isVisible={bares.lgbt} source={lgbtImg} /> ) : null}
+            { expensive.show ? (<Image isVisible={bares.expensive} source={expensiveImg} /> ) : null}
+          </View>
           <Text style={styles.text}>{bares.location}</Text>
         </View>
       </View>
-
-
+      
       <TouchableOpacity style={styles.partyButton} onPress={() => showModal()}>
-        <Text style={styles.partyButtonText}>Parties</Text>
+        <Text style={styles.partyButtonText}> Formar Party</Text>
         <MaterialCommunityIcons style={styles.group} name="account-group" />
       </TouchableOpacity>
 
