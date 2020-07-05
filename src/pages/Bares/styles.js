@@ -155,6 +155,52 @@ export default StyleSheet.create({
         fontSize: 16,
         lineHeight: 24,
         fontWeight: '100',
+    },
+
+    partiesView: {
+        width: 150,
+        flexDirection: 'row',
+        margin: 8,
+    },
+
+    partyCard: {
+        width: 150,
+        height: 100,
+        backgroundColor: '#323F4B',
+        flexGrow: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 8
+    },
+
+    partyNameText: {
+        color: '#FFF',
+        fontSize: 18,
+        fontWeight: 'bold',
+        alignItems: 'center',
+        textAlign: 'center',
+        marginBottom: 12
+    },
+
+    partyHourText: {
+        color: '#FFF',
+        fontSize: 12,
+        fontWeight: '300',
+    },
+
+    partyHeader: {
+        flexDirection: 'row'
+    },
+
+    partyHeaderText: {
+        color: 'white',
+        fontSize: 24,
+        fontWeight: 'bold',
+        margin: 8
+    },
+
+    partyList: {
+        height: 500
     }
 
 });

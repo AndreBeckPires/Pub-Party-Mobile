@@ -11,6 +11,7 @@ import styles from './styles';
 import ambevImg from '../../assets/ambev.png';
 import lgbtImg from '../../assets/lgbt.png';
 import expensiveImg from '../../assets/expensive.png';
+import { ScrollView } from 'react-native-gesture-handler';
 
 Icon.loadFont();
 
@@ -18,6 +19,14 @@ export default function Bares() {
   function navigateBack() {
     navigation.goBack();
   }
+
+  const [parties, setParties] = useState([]);
+
+  let data = [
+    { name: 'Aniversário da Ju', hour: '19:30', },
+    { name: 'Role dus Guri', hour: '23:00', },
+    { name: 'Happy Hour da Shawee', hour: '20:00', },
+  ];
 
   const navigation = useNavigation();
   const route = useRoute();
@@ -34,6 +43,15 @@ export default function Bares() {
   useEffect(() => {
     ShowHideComponent();
   }, []);
+
+  function loadParties() {
+    setParties(data);
+  }
+
+  useEffect(() => {
+    loadParties();
+  }, []);
+
 
   function ShowHideComponent() {
     if (bares.lgbt == true) {
@@ -77,8 +95,31 @@ export default function Bares() {
         </View>
       </View>
 
+      <View style={styles.partyHeader}>
+        <Text style={styles.partyHeaderText}>Parties</Text>
+        <MaterialCommunityIcons style={styles.group} name="account-group" />
+      </View>
+
+      <FlatList
+        style={styles.partyList}
+        data={parties}
+        keyExtractor={(item, index) => index.toString()}
+        showsVerticalScrollIndicator={false}
+        onEndReachedThreshold={0.2}
+        numColumns={2}
+        renderItem={({ item: parties }) => (
+          <View style={styles.partiesView}>
+            <TouchableOpacity style={styles.partyCard}>
+              <Text style={styles.partyNameText}> {parties.name}</Text>
+              <Text style={styles.partyHourText}> {parties.hour}</Text>
+            </TouchableOpacity>
+          </View>
+        )}
+      />
+
+
       <TouchableOpacity style={styles.partyButton} onPress={() => showModal()}>
-        <Text style={styles.partyButtonText}> Formar Party</Text>
+        <Text style={styles.partyButtonText}>Criar Party</Text>
         <MaterialCommunityIcons style={styles.group} name="account-group" />
       </TouchableOpacity>
 
