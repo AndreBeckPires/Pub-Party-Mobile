@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Mega-Hack",
+    "name": "Mega-Hack Teste",
     "slug": "Mega-Hack",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -21,6 +21,7 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": ""
   }
 }

@@ -15,24 +15,7 @@ export default StyleSheet.create({
         width: 72,
         height: 72,
         borderRadius: 400 / 2,
-        margin: 23,
-    },
-
-    bares: {
-        width: 343,
-        height: 118,
-        backgroundColor: '#323F4B',
-        justifyContent: 'space-between',
-        marginBottom: 8,
-        marginTop: 8,
-        marginLeft: 4,
-        marginRight: 4,
-        fontSize: 48,
-    },
-
-    baresText: {
-        color: "#D3CEC4",
-        fontSize: 24,
+        margin: 16,
     },
 
     headerBar: {
@@ -78,4 +61,38 @@ export default StyleSheet.create({
         fontWeight: 'bold',
     },
 
+    barName: {
+        color: 'white',
+        fontSize: 20,
+        lineHeight: 30
+    },
+
+    barLocation: {
+        color: 'white',
+        fontSize: 16,
+        lineHeight: 24
+    },
+
+    barOpen: {
+        color: 'white',
+        fontSize: 16,
+        lineHeight: 24,
+        fontWeight: 'bold'
+    },
+
+    barTextView: {
+        flexDirection: 'column',
+        color: 'white',
+        padding: 12
+    },
+
+    bares: {
+        width: 350,
+        flexDirection: 'row',
+        backgroundColor: '#323F4B',
+        margin: 8,
+        marginLeft: 16,
+        marginRight: 16,
+        borderRadius: 4
+    },
 });
