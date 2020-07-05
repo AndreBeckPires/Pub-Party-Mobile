@@ -112,8 +112,6 @@ export default function Bares() {
             <Icon style={styles.backModal} name="arrow-back" />
           </TouchableOpacity>
           <Text style={styles.titleModal}>Forme sua party</Text>
-<<<<<<< HEAD
-=======
           <TextInput
           
           style={{
@@ -134,7 +132,6 @@ export default function Bares() {
           </View>
 
 
->>>>>>> f3c2fca15b46ef1568c0c2a717728563209fd33e
         </Modal>
       </View>
     </View>
