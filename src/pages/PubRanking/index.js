@@ -34,6 +34,8 @@ export default function PubRanking() {
 
   return (
     <View style={styles.container}>
+      <View style={styles.headerBar} />
+
       <Text style={styles.title}>Ranking</Text>
 
       <View style={styles.header}>

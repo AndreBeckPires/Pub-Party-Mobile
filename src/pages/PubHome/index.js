@@ -20,6 +20,8 @@ export default function PubHome() {
     return (
         <View style={styles.container}>
 
+            <View style={styles.headerBar} />
+
             <Text style={styles.title}>Gerar QRCode</Text>
 
             <DropDownPicker

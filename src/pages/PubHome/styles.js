@@ -22,7 +22,9 @@ export default StyleSheet.create({
         color: '#FFAC2C',
         fontSize: 24,
         fontWeight: 'bold',
-        marginBottom: 20
+        marginBottom: 20,
+        paddingTop: Constants.statusBarHeight + 28,
+
     },
 
     buttons: {
@@ -66,6 +68,17 @@ export default StyleSheet.create({
         color: '#fff',
         fontWeight: 'bold',
         fontSize: 14
-    }
+    },
+
+    headerBar: {
+        backgroundColor: '#1F2933',
+        position: 'absolute',
+        height: Constants.statusBarHeight + 60,
+        paddingTop: 22,
+        flexDirection: 'row',
+        top: 0,
+        right: 0,
+        left: 0
+    },
 
 });
