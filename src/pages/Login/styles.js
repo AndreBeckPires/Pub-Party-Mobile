@@ -21,7 +21,7 @@ export default StyleSheet.create({
         width: 150,
         height: 150,
         resizeMode: 'stretch',
-        marginBottom: 150
+        marginBottom: 50
     },
 
     buttons: {
@@ -46,6 +46,14 @@ export default StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'space-between',
+    },
+
+    dropdown: {
+        width: 300,
+        marginBottom: 10,
+        marginTop: 10,
+        height: 56,
+        color: "#D3CEC4",
     },
 
 });
