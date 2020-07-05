@@ -14,8 +14,6 @@ import barExpensive from '../../assets/barexpensive.jpg';
 Icon.loadFont();
 
 export default function Bares() {
-
-
   function navigateBack() {
     navigation.goBack();
   }
@@ -94,17 +92,12 @@ export default function Bares() {
         ) : null
       }
 
-
       <TouchableOpacity
         onPress={() => showModal()}>
         <MaterialCommunityIcons style={styles.group} name="account-group" />
-
       </TouchableOpacity>
 
-
       <View style={{ flex: 1 }}>
-
-
         <Modal isVisible={isModalVisible}>
           <View style={{ flex: 1, backgroundColor: 'white' }}>
             <Text>Forme sua party</Text>
@@ -117,8 +110,6 @@ export default function Bares() {
           </View>
         </Modal>
       </View>
-
-
     </View>
   );
 }
