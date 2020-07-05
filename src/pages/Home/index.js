@@ -34,7 +34,11 @@ export default function Home() {
   function navigateToBares(bares) {
     navigation.navigate('Bares', { bares });
   }
-
+  useEffect(() => {
+  
+    ShowHideComponent();
+  }, []);
+  
   function ShowHideComponent() {
     if (state.show == true) {
       setState({ show: false });

@@ -1,17 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { Text, View, Constants, Image, TouchableOpacity, FlatList } from 'react-native';
+import React, { useState } from 'react';
+import { Text, View, Image, TouchableOpacity, FlatList } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Modal from 'react-native-modal';
 import DropDownPicker from 'react-native-dropdown-picker';
 import { TextInput } from 'react-native-paper';
-
 import styles from './styles';
 
-import barAmbev from '../../assets/barambev.jpg';
-import barLgbt from '../../assets/barlgbt.jpg';
-import barExpensive from '../../assets/barexpensive.jpg';
+
 import whats from '../../assets/wpp.png';
 import insta from '../../assets/instagram.png';
 import twitter from '../../assets/twitter.png';
