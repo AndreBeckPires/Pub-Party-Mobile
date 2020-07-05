@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, Constants, Image, TouchableOpacity,FlatList } from 'react-native';
+import { Text, View, Constants, Image, TouchableOpacity, FlatList } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -24,9 +24,6 @@ export default function Bares() {
   }
   const navigation = useNavigation();
   const route = useRoute();
-  const [state1, setState1] = useState([false]);
-  const [state2, setState2] = useState([false]);
-  const [state3, setState3] = useState([false]);
   const [isModalVisible, setModalVisible] = useState(false);
   const [text, setText] = React.useState('');
 
@@ -36,28 +33,14 @@ export default function Bares() {
   function addItem() {
     setState([...state, selected]);
     console.log(selected);
-}
+  }
 
-
-  const { tag } = route.params;
+  const bares = route.params.bares;
 
   function showModal() {
     setModalVisible(!isModalVisible);
   }
 
-  useEffect(() => {
-    if (tag === 1) {
-      setState1({ show: true });
-    }
-    if (tag === 2) {
-
-      setState2({ show: true });
-    }
-    if (tag === 3) {
-      setState3({ show: true });
-    }
-
-  }, []);
 
   return (
     <View style={styles.container}>
@@ -65,50 +48,20 @@ export default function Bares() {
         onPress={() => navigateBack()}>
         <Icon style={styles.back} name="arrow-back" />
       </TouchableOpacity>
-      {
-        state1.show ? (
-          <View>
-            <View style={styles.telaBAR}>
-              <Image style={styles.images} source={barLgbt} />
-            </View>
-            <View style={styles.texts}>
-              <Text style={styles.textH1}>Ambev</Text>
-              <Text style={styles.text}>AQUI VAO OS DADOS SOBRE O BAR AHSUIDHASUIDHASUIODHASIUDOHASDIUAHSDUIASHDIUAHSDIUASHDIUASHDIUSADHIASGYUDGSAUYDGASDUYAGSDUYASGDUYASGDUASYDGASUYDGSAUYDGSAUYDGASUYDGSADUYAGSddYUASGDUYASGIDYIUGDSUYUGAYUASGDYUIAYUAGSDUYISGASDYSAGDYUA</Text>
-            </View>
-          </View>
-        ) : null
-      }
-      {
-        state2.show ? (
 
-          <View>
-            <View style={styles.telaBAR}>
-              <Image style={styles.images} source={barAmbev} />
-            </View>
-            <View style={styles.texts}>
-              <Text style={styles.textH1}>Ambev</Text>
-              <Text style={styles.text}>AQUI VAO OS DADOS SOBRE O BAR AHSUIDHASUIDHASUIODHASIUDOHASDIUAHSDUIASHDIUAHSDIUASHDIUASHDIUSADHIASGYUDGSAUYDGASDUYAGSDUYASGDUYASGDUASYDGASUYDGSAUYDGSAUYDGASUYDGSADUYAGSddYUASGDUYASGIDYIUGDSUYUGAYUASGDYUIAYUAGSDUYISGASDYSAGDYUA</Text>
-            </View>
-          </View>
-        ) : null
-      }
+      <View>
+        <View style={styles.telaBAR}>
+          <Image style={styles.images} source={bares.imgUrl} />
+        </View>
+        <View style={styles.texts}>
+          <Text style={styles.textH1}>{bares.name}</Text>
+          <Text style={styles.text}>{bares.location}</Text>
+        </View>
+      </View>
 
-      {
-        state3.show ? (
-          <View>
-            <View style={styles.telaBAR}>
-              <Image style={styles.images} source={barExpensive} />
-            </View>
-            <View style={styles.texts}>
-              <Text style={styles.textH1}>Expensive</Text>
-              <Text style={styles.text}>AQUI VAO OS DADOS SOBRE O BAR AHSUIDHASUIDHASUIODHASIUDOHASDIUAHSDUIASHDIUAHSDIUASHDIUASHDIUSADHIASGYUDGSAUYDGASDUYAGSDUYASGDUYASGDUASYDGASUYDGSAUYDGSAUYDGASUYDGSADUYAGSddYUASGDUYASGIDYIUGDSUYUGAYUASGDYUIAYUAGSDUYISGASDYSAGDYUA</Text>
-            </View>
-          </View>
-        ) : null
-      }
 
-      <TouchableOpacity
-        onPress={() => showModal()}>
+      <TouchableOpacity style={styles.partyButton} onPress={() => showModal()}>
+        <Text style={styles.partyButtonText}>Parties</Text>
         <MaterialCommunityIcons style={styles.group} name="account-group" />
       </TouchableOpacity>
 
@@ -132,56 +85,54 @@ export default function Bares() {
             onChangeText={text => setText(text)
             }
           />
-          <View style={{ 
+          <View style={{
 
             width: '80%',
             height: '10%',
             paddingTop: 10,
           }}>
-         
-         <DropDownPicker
-                items={[
-                  { label: 'Arthur'},
-                  { label: 'André' },
-                  { label: 'Juliana'},
-                  { label: 'Caio'},
-                ]}
-                style={{backgroundColor: '#D3CEC4'}}
-                placeholder={"Monte sua party"}
-                containerStyle={styles.dropdown}
-                dropDownStyle={{ backgroundColor: '#D3CEC4' }}
-                onChangeItem={item => setSelected({
-                    product: item.label,
-        
-                })}
+
+            <DropDownPicker
+              items={[
+                { label: 'Arthur' },
+                { label: 'André' },
+                { label: 'Juliana' },
+                { label: 'Caio' },
+              ]}
+              style={{ backgroundColor: '#D3CEC4' }}
+              placeholder={"Monte sua party"}
+              containerStyle={styles.dropdown}
+              dropDownStyle={{ backgroundColor: '#D3CEC4' }}
+              onChangeItem={item => setSelected({
+                product: item.label,
+
+              })}
             />
 
             <FlatList
-                style={styles.productList}
-                data={state}
-                keyExtractor={(item, index) => index.toString()}
-                showsVerticalScrollIndicator={false}
-                onEndReachedThreshold={0.2}
-                renderItem={({ item: cases }) => (
-                    <View style={styles.product}>
-                        <Text style={styles.productText}>{cases.product}</Text>
-                    </View>
-                )}
+              style={styles.productList}
+              data={state}
+              keyExtractor={(item, index) => index.toString()}
+              showsVerticalScrollIndicator={false}
+              onEndReachedThreshold={0.2}
+              renderItem={({ item: cases }) => (
+                <View style={styles.product}>
+                  <Text style={styles.productText}>{cases.product}</Text>
+                </View>
+              )}
             />
-                <TouchableOpacity
-                    style={styles.buttons}
-                    onPress={() => addItem()}>
-                    <Text style={styles.buttonText}>Adicionar item</Text>
-                </TouchableOpacity>
-            
-            </View>
+            <TouchableOpacity
+              style={styles.buttons}
+              onPress={() => addItem()}>
+              <Text style={styles.buttonText}>Adicionar item</Text>
+            </TouchableOpacity>
+
+          </View>
           <View style={styles.socialMedia}>
             <Image style={styles.mediaImages} source={twitter} />
             <Image style={styles.mediaImages} source={insta} />
             <Image style={styles.mediaImages} source={whats} />
           </View>
-
-
         </Modal>
       </View>
     </View>

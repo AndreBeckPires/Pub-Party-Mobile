@@ -11,7 +11,6 @@ export default class QrCodeModal extends Component {
         isModalVisible: false,
     };
 
-
     toggleModal = () => {
         this.setState({ isModalVisible: !this.state.isModalVisible });
     };
