@@ -5,6 +5,8 @@ import { TextInput } from 'react-native-paper';
 import DropDownPicker from 'react-native-dropdown-picker';
 
 
+import api from '../../services/api';
+
 import styles from './styles';
 
 import logo from '../../../assets/Beer-icon.png';
@@ -13,7 +15,27 @@ export default function Home() {
     const navigation = useNavigation();
     const [user, setUser] = React.useState('');
     const [password, setPassword] = React.useState('');
+    const [type, setType] = React.useState('');
 
+    async function loginFunction() {      
+        
+        setType('bar');
+        console.log(user,password,type);
+        try{
+        const response = await api.post('sessions',  {
+            params: { user, password, type }
+        });
+        console.log(response);
+
+        navigateToPubPage();
+    } catch (err) {
+        alert('Falha no login, tente novamente')
+    }
+
+    }
+
+
+    
     function navigateToUserPage() {
         navigation.navigate('UserPage');
     }
@@ -22,7 +44,9 @@ export default function Home() {
         navigation.navigate('PubPage');
     }
 
+   
     return (
+        
         <View style={styles.container}>
             <View style={styles.buttonView}>
 
@@ -35,7 +59,7 @@ export default function Home() {
                 }}
                     label="Digite seu email"
                     value={user}
-                    onChangeText={user => setText(user)
+                    onChangeText={user => setUser(user)
                     }
                 />
 
@@ -46,7 +70,7 @@ export default function Home() {
                 }}
                     label="Digite sua senha"
                     value={password}
-                    onChangeText={password => setText(password)
+                    onChangeText={password => setPassword(password)
                     }
                 />
 
@@ -66,7 +90,7 @@ export default function Home() {
 
                 <TouchableOpacity
                     style={styles.buttons}
-                    onPress={() => navigateToUserPage()}>
+                    onPress={() => loginFunction()}>
                     <Text style={styles.buttonText}>Logar</Text>
                 </TouchableOpacity>
 

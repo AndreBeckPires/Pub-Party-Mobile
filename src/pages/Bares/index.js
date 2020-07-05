@@ -12,6 +12,13 @@ import ambevImg from '../../assets/ambev.png';
 import lgbtImg from '../../assets/lgbt.png';
 import expensiveImg from '../../assets/expensive.png';
 
+
+
+
+
+
+
+
 Icon.loadFont();
 
 export default function Bares() {
@@ -31,8 +38,13 @@ export default function Bares() {
   const [expensive, setExpensive] = useState([false]);
   const bares = route.params.bares;
 
+
+
+
+
   useEffect(() => {
     ShowHideComponent();
+    
   }, []);
 
   function ShowHideComponent() {
