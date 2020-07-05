@@ -10,9 +10,9 @@ import styles from './styles';
 import ambevImg from '../../assets/ambev.png';
 import lgbtImg from '../../assets/lgbt.png';
 import expensiveImg from '../../assets/expensive.png';
-import barAmbev from '../../assets/barambev.png';
-import barLgbt from '../../assets/barlgbt.png';
-import barExpensive from '../../assets/barexpensive.png';
+import barAmbev from '../../assets/barambev.jpg';
+import barLgbt from '../../assets/barlgbt.jpg';
+import barExpensive from '../../assets/barexpensive.jpg';
 
 Icon.loadFont();
 
@@ -140,8 +140,6 @@ export default function Home() {
                 
                 <Image source={barAmbev}
                   style={styles.images} />
-               
-               <Text style={styles.baresText}>BAR DO ARTHUR</Text>
               </TouchableOpacity>
 
             </View>

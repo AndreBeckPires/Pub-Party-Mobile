@@ -7,9 +7,9 @@ import Modal from 'react-native-modal';
 
 import styles from './styles';
 
-import barAmbev from '../../assets/barambev.png';
-import barLgbt from '../../assets/barlgbt.png';
-import barExpensive from '../../assets/barexpensive.png';
+import barAmbev from '../../assets/barambev.jpg';
+import barLgbt from '../../assets/barlgbt.jpg';
+import barExpensive from '../../assets/barexpensive.jpg';
 
 Icon.loadFont();
 
@@ -54,32 +54,42 @@ export default function Bares() {
       </TouchableOpacity>
       {
         state1.show ? (
-          <View style={styles.container}>
-            <Image style={styles.images} source={barLgbt} />
-            <Text style={styles.textH1}>LGBT</Text>
-            <Text style={styles.text}>AQUI VAO OS DADOS SOBRE O BAR AHSUIDHASUIDHASUIODHASIUDOHASDIUAHSDUIASHDIUAHSDIUASHDIUASHDIUSADHIASGYUDGSAUYDGASDUYAGSDUYASGDUYASGDUASYDGASUYDGSAUYDGSAUYDGASUYDGSADUYAGSddYUASGDUYASGIDYIUGDSUYUGAYUASGDYUIAYUAGSDUYISGASDYSAGDYUA</Text>
+          <View>
+            <View style={styles.telaBAR}>
+              <Image style={styles.images} source={barLgbt} />
+            </View>
+            <View style={styles.texts}>
+              <Text style={styles.textH1}>Ambev</Text>
+              <Text style={styles.text}>AQUI VAO OS DADOS SOBRE O BAR AHSUIDHASUIDHASUIODHASIUDOHASDIUAHSDUIASHDIUAHSDIUASHDIUASHDIUSADHIASGYUDGSAUYDGASDUYAGSDUYASGDUYASGDUASYDGASUYDGSAUYDGSAUYDGASUYDGSADUYAGSddYUASGDUYASGIDYIUGDSUYUGAYUASGDYUIAYUAGSDUYISGASDYSAGDYUA</Text>
+            </View>
           </View>
         ) : null
       }
       {
         state2.show ? (
-          <View style={styles.container}>
-            <Image style={styles.images} source={barAmbev} />
-            <Text style={styles.textH1}>Ambev</Text>
 
-            <Text style={styles.text}>AQUI VAO OS DADOS SOBRE O BAR AHSUIDHASUIDHASUIODHASIUDOHASDIUAHSDUIASHDIUAHSDIUASHDIUASHDIUSADHIASGYUDGSAUYDGASDUYAGSDUYASGDUYASGDUASYDGASUYDGSAUYDGSAUYDGASUYDGSADUYAGSddYUASGDUYASGIDYIUGDSUYUGAYUASGDYUIAYUAGSDUYISGASDYSAGDYUA</Text>
-
+          <View>
+            <View style={styles.telaBAR}>
+              <Image style={styles.images} source={barAmbev} />
+            </View>
+            <View style={styles.texts}>
+              <Text style={styles.textH1}>Ambev</Text>
+              <Text style={styles.text}>AQUI VAO OS DADOS SOBRE O BAR AHSUIDHASUIDHASUIODHASIUDOHASDIUAHSDUIASHDIUAHSDIUASHDIUASHDIUSADHIASGYUDGSAUYDGASDUYAGSDUYASGDUYASGDUASYDGASUYDGSAUYDGSAUYDGASUYDGSADUYAGSddYUASGDUYASGIDYIUGDSUYUGAYUASGDYUIAYUAGSDUYISGASDYSAGDYUA</Text>
+            </View>
           </View>
         ) : null
       }
 
       {
         state3.show ? (
-          <View style={styles.container}>
-            <Image style={styles.images} source={barExpensive} />
-            <Text style={styles.textH1}>Expensive</Text>
-            <Text style={styles.text}>AQUI VAO OS DADOS SOBRE O BAR AHSUIDHASUIDHASUIODHASIUDOHASDIUAHSDUIASHDIUAHSDIUASHDIUASHDIUSADHIASGYUDGSAUYDGASDUYAGSDUYASGDUYASGDUASYDGASUYDGSAUYDGSAUYDGASUYDGSADUYAGSddYUASGDUYASGIDYIUGDSUYUGAYUASGDYUIAYUAGSDUYISGASDYSAGDYUA</Text>
-            <Text>Horario de funcionamento: </Text>
+          <View>
+            <View style={styles.telaBAR}>
+              <Image style={styles.images} source={barExpensive} />
+            </View>
+            <View style={styles.texts}>
+              <Text style={styles.textH1}>Expensive</Text>
+              <Text style={styles.text}>AQUI VAO OS DADOS SOBRE O BAR AHSUIDHASUIDHASUIODHASIUDOHASDIUAHSDUIASHDIUAHSDIUASHDIUASHDIUSADHIASGYUDGSAUYDGASDUYAGSDUYASGDUYASGDUASYDGASUYDGSAUYDGSAUYDGASUYDGSADUYAGSddYUASGDUYASGIDYIUGDSUYUGAYUASGDYUIAYUAGSDUYISGASDYSAGDYUA</Text>
+            </View>
           </View>
         ) : null
       }

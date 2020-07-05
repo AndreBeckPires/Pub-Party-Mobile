@@ -6,43 +6,51 @@ export default StyleSheet.create({
 
     container: {
         flex: 1,
-        justifyContent: 'center',
+        justifyContent:'flex-start',
         alignItems: 'center',
-        paddingHorizontal: 24,
         paddingTop: Constants.statusBarHeight + 20,
         backgroundColor: '#121212'
 
     },
+    telaBAR: {
+
+        alignItems: 'center',  
+        height: '35%',
+    },
     images: {
-        height: '50%',
-        width: 400,
-        paddingBottom: 200,
+        height: '100%', 
+        width: '100%', 
     },
     textH1: {
         color:'#D3CEC4',
         fontSize: 32,
-        paddingBottom: 100,
-        paddingTop: 10,
+        justifyContent: 'center',
 
     },
     back: {
         color: "#D3CEC4",
-        paddingRight: 330,
+        paddingRight: '90%',
         fontSize: 40,
-        paddingBottom: 260,
+        backgroundColor: '#323F4B',
     },
     group: {
         color: "#D3CEC4",
         fontSize: 40,
-        paddingTop: 360,
+
+        
     },
     text: {
         color: "#D3CEC4",
         fontSize: 16,
-        
-
+        marginTop: '10%',
 
     },
-    
+    texts: {
+        color: "#D3CEC4",
+        fontSize: 16,
+ 
+        alignItems: 'center',
+        marginTop: '10%',
+    },
 
 });
