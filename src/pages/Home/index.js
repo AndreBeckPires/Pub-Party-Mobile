@@ -19,15 +19,14 @@ Icon.loadFont();
 export default function Home() {
 
   const navigation = useNavigation();
-  const route = useRoute();
 
   const [state, setState] = useState([true]);
   const [stateLgbt, setStateLgbt] = useState([true]);
   const [stateAmbev, setStateAmbev] = useState([true]);
   const [stateExpensive, setStateExpensive] = useState([true]);
-  const [lgbt, setLgbt] = useState([false]);
-  const [ambev, setAmbev] = useState([false]);
-  const [expensive, setExpensive] = useState([false]);
+  const [lgbt, setLgbt] = useState([true]);
+  const [ambev, setAmbev] = useState([true]);
+  const [expensive, setExpensive] = useState([true]);
 
   function navigateToBares(tag) {
     navigation.navigate('Bares', { tag });
@@ -40,6 +39,7 @@ export default function Home() {
       setState({ show: true });
     }
   }
+
   function selectLGBT() {
     if (lgbt == false) {
       setLgbt(true);
@@ -48,6 +48,7 @@ export default function Home() {
     }
 
   }
+
   function selectAMBEV() {
     if (ambev == false) {
       setAmbev(true);
@@ -55,6 +56,7 @@ export default function Home() {
       setAmbev(false);
     }
   }
+
   function selectExpensive() {
     if (expensive == false) {
       setExpensive(true);
@@ -62,6 +64,7 @@ export default function Home() {
       setExpensive(false);
     }
   }
+
   function showBars() {
     if (lgbt == false) {
       setStateLgbt({ show: true });
@@ -78,49 +81,50 @@ export default function Home() {
     } else {
       setStateExpensive({ show: false });
     }
-
-
   }
-
 
   return (
     <View style={styles.container}>
+      <View style={styles.headerBar}>
 
-      <TouchableOpacity
-        onPress={() => ShowHideComponent()}>
-        <Text>Selecionar filtros</Text>
-        <Icon name="search" color="black" size={26} />
-      </TouchableOpacity>
+        <View style={styles.iconsView}>
+          <TouchableOpacity
+            style={styles.iconButtons}
+            onPress={() => ShowHideComponent()}>
+            <Icon name="filter-list" color="#D3CEC4" size={26} />
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.iconButtons}
+            onPress={() => showBars()}>
+            <Icon name="search" color="#D3CEC4" size={26} />
+          </TouchableOpacity>
+        </View>
+      </View >
 
       {
         state.show ? (
-          <ScrollView
-            horizontal={true}
-          >
-            <TouchableOpacity
-              onPress={() => selectAMBEV()}
-            >
-              <Image source={ambevImg} />
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => selectLGBT()}>
-              <Image source={lgbtImg} />
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => selectExpensive()}>
-              <Image source={expensiveImg} />
-            </TouchableOpacity>
+          <View style={styles.filtersView}>
+            <ScrollView horizontal={true}>
+              <TouchableOpacity onPress={() => selectAMBEV()}>
+                <Image style={styles.filterIcon} source={ambevImg} />
+              </TouchableOpacity>
 
-          </ScrollView>
+              <TouchableOpacity
+                onPress={() => selectLGBT()}>
+                <Image style={styles.filterIcon} source={lgbtImg} />
+              </TouchableOpacity>
 
+              <TouchableOpacity
+                onPress={() => selectExpensive()}>
+                <Image style={styles.filterIcon} source={expensiveImg} />
+              </TouchableOpacity>
+            </ScrollView>
+          </View>
         ) : null
       }
-      <TouchableOpacity
-        onPress={() => showBars()}>
-        <Text>Search</Text>
-        <Icon name="search" color="black" size={26} />
-      </TouchableOpacity>
-      <ScrollView>
+
+      < ScrollView >
         {
           stateLgbt.show ? (<View style={styles.bares}>
             <TouchableOpacity
@@ -137,7 +141,7 @@ export default function Home() {
             <View style={styles.bares}>
               <TouchableOpacity
                 onPress={() => navigateToBares(2)}>
-                
+
                 <Image source={barAmbev}
                   style={styles.images} />
               </TouchableOpacity>
@@ -157,11 +161,7 @@ export default function Home() {
             </View>
           ) : null
         }
-      </ScrollView>
-    </View>
-
-
-
-
+      </ScrollView >
+    </View >
   );
 }
