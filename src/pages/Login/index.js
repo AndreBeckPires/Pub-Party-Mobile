@@ -22,11 +22,10 @@ export default function Home() {
         setType('bar');
         console.log(user,password,type);
         try{
-        const response = await api.post('sessions',  {
+        const response = await api.post('/sessions',  {
             params: { user, password, type }
         });
         console.log(response);
-
         navigateToPubPage();
     } catch (err) {
         alert('Falha no login, tente novamente')
@@ -34,6 +33,7 @@ export default function Home() {
 
     }
 
+ 
 
     
     function navigateToUserPage() {

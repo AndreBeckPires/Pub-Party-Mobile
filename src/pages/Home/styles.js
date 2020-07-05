@@ -101,4 +101,74 @@ export default StyleSheet.create({
         marginBottom: 10,
         height: 56,
     },
+    modal: {
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        backgroundColor: '#121212',
+        width: '100%',
+        margin: 0,
+        paddingTop: Constants.statusBarHeight + 20,
+    },
+
+    titleModal: {
+        color: '#D3CEC4',
+        fontSize: 32,
+        justifyContent: 'center',
+        padding: 8
+    },
+
+    backModal: {
+        color: "#D3CEC4",
+        paddingLeft: '10%',
+        paddingRight: '8%',
+        fontSize: 40,
+        backgroundColor: '#323F4B',
+    },
+    groupNameText: {
+        color: '#FFF',
+        fontSize: 32,
+        fontWeight: 'bold',
+        alignItems: 'center',
+        textAlign: 'center',
+        marginBottom: '12%',
+        marginTop: '12%',
+    },
+    nameText: {
+        color: '#FFF',
+        fontSize: 20,
+        fontWeight: 'bold',
+        alignItems: 'center',
+        textAlign: 'center',
+        marginBottom: 12,
+ 
+    },
+    members: {
+        margin: '5%',
+    },
+    headerModal:{
+        color: "#D3CEC4",
+        paddingRight: '30%',
+        paddingLeft: '5%',
+        backgroundColor: '#323F4B',
+        fontSize: 32,
+    },
+    credits: {
+        color: '#FFF',
+        fontSize: 12,
+        fontWeight: 'bold',
+        alignItems: 'center',
+        textAlign: 'center',
+        marginBottom: 12,
+        marginTop: '40  %',
+    },
+    creditsText: {
+        color: '#FFF',
+        fontSize: 18,
+        fontWeight: 'bold',
+        alignItems: 'center',
+        textAlign: 'center'
+    },
+    viewDosCreditos: {
+        marginTop: '20%',
+    }
 });

@@ -56,4 +56,12 @@ export default StyleSheet.create({
         color: "#D3CEC4",
     },
 
+    modal: {
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        backgroundColor: '#121212',
+        width: '100%',
+        margin: 0,
+        paddingTop: Constants.statusBarHeight + 20,
+    },
 });
