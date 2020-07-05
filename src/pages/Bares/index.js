@@ -112,16 +112,14 @@ export default function Bares() {
             <Icon style={styles.backModal} name="arrow-back" />
           </TouchableOpacity>
           <Text style={styles.titleModal}>Forme sua party</Text>
-<<<<<<< HEAD
-=======
           <TextInput
-          
-          style={{
-            width:'80%',
-            marginTop: '10%',
-            backgroundColor: "#D3CEC4",
-            
-          }}
+
+            style={{
+              width: '80%',
+              marginTop: '10%',
+              backgroundColor: "#D3CEC4",
+
+            }}
             label="De um nome para sua party"
             value={text}
             onChangeText={text => setText(text)
@@ -134,7 +132,6 @@ export default function Bares() {
           </View>
 
 
->>>>>>> f3c2fca15b46ef1568c0c2a717728563209fd33e
         </Modal>
       </View>
     </View>

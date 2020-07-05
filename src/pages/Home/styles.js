@@ -5,7 +5,6 @@ export default StyleSheet.create({
 
     container: {
         flex: 1,
-        justifyContent: 'flex-start',
         alignItems: 'center',
         paddingTop: Constants.statusBarHeight + 60,
         backgroundColor: '#121212',
@@ -64,26 +63,28 @@ export default StyleSheet.create({
     barName: {
         color: 'white',
         fontSize: 20,
-        lineHeight: 30
+        lineHeight: 30,
+        marginBottom: 4
     },
 
     barLocation: {
         color: 'white',
         fontSize: 16,
-        lineHeight: 24
+        lineHeight: 24,
+        marginBottom: 4
     },
 
     barOpen: {
         color: 'white',
         fontSize: 16,
         lineHeight: 24,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        marginBottom: 4
     },
 
     barTextView: {
         flexDirection: 'column',
         color: 'white',
-        padding: 12
     },
 
     bares: {
@@ -91,8 +92,7 @@ export default StyleSheet.create({
         flexDirection: 'row',
         backgroundColor: '#323F4B',
         margin: 8,
-        marginLeft: 16,
-        marginRight: 16,
-        borderRadius: 4
+        borderRadius: 4,
+        padding: 8
     },
 });
