@@ -48,9 +48,25 @@ export default StyleSheet.create({
     texts: {
         color: "#D3CEC4",
         fontSize: 16,
- 
         alignItems: 'center',
         marginTop: '10%',
+    },
+    modal: {
+        justifyContent:'flex-start',
+        alignItems: 'center',
+        backgroundColor:'#121212',
+    },
+    titleModal: {
+        color:'#D3CEC4',
+        fontSize: 32,
+        justifyContent: 'center',
+ 
+    },
+    backModal: {
+        color: "#D3CEC4",
+        paddingRight: '90%',
+        fontSize: 40,
+        backgroundColor: '#323F4B',
     },
 
 });

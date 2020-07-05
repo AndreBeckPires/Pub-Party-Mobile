@@ -102,19 +102,16 @@ export default function Bares() {
       </TouchableOpacity>
 
 
-      <View style={{ flex: 1 }}>
+      <View >
+        <Modal style={styles.modal} isVisible={isModalVisible}>
+          <TouchableOpacity
+            onPress={() => showModal()}>
+            <Icon style={styles.backModal} name="arrow-back" />
+          </TouchableOpacity>
+
+          <Text style={styles.titleModal}>Forme sua party</Text>
 
 
-        <Modal isVisible={isModalVisible}>
-          <View style={{ flex: 1, backgroundColor: 'white' }}>
-            <Text>Forme sua party</Text>
-
-            <TouchableOpacity
-              onPress={() => showModal()}>
-              <Icon name="arrow-back" color="#D3CEC4" size={26} />
-              <Text>Voltar</Text>
-            </TouchableOpacity>
-          </View>
         </Modal>
       </View>
 
