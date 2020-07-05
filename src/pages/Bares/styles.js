@@ -83,4 +83,17 @@ export default StyleSheet.create({
         
 
     },
+    dropdown: {
+        width: '100%',
+        marginBottom: 10,
+        height: 56,
+        color: "#D3CEC4",
+    },
+    
+    productList: {
+        width: '100%',
+      
+    },
+
+
 });
