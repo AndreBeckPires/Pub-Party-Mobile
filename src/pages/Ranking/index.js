@@ -29,15 +29,17 @@ export default function Ranking() {
   ]
 
   useEffect(() => {
-   loadRanking(data);
+    loadRanking(data);
   }, []);
-  
+
   function loadRanking(data) {
     setDados(data);
   }
 
   return (
     <View style={styles.container}>
+      <View style={styles.headerBar} />
+      
       <Text style={styles.title}>Ranking</Text>
 
       <View style={styles.header}>

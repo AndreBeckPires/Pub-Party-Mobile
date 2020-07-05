@@ -28,7 +28,7 @@ export default class ModalScan extends Component {
                     <View style={styles.modalBox}>
 
                         <View style={styles.sectionInfo}>
-                            <Text style={styles.sectionTitle}> Sua party pontuou {this.props.value} mls! </Text>
+                            <Text style={styles.sectionTitle}> Sua party bebeu {this.props.value} mls! </Text>
                             <Text style={styles.sectionInfo}>Avalie sua experiência no bar</Text>
                             <StarRating />
                         </View>

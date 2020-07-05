@@ -35,10 +35,10 @@ export default function Home() {
     navigation.navigate('Bares', { bares });
   }
   useEffect(() => {
-  
+
     loadBares();
   }, []);
-  
+
   function ShowHideComponent() {
     if (state.show == true) {
       setState({ show: false });
@@ -46,9 +46,8 @@ export default function Home() {
       setState({ show: true });
     }
 
-    
   }
-  function loadBares(){
+  function loadBares() {
     setBares(data);
   }
   return (

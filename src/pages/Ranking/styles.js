@@ -6,7 +6,8 @@ export default StyleSheet.create({
     title: {
         fontSize: 30,
         fontWeight: 'bold',
-        color: '#FFAC2C'
+        color: '#FFAC2C',
+        marginTop: Constants.statusBarHeight + 24,
     },
 
     container: {
@@ -90,6 +91,17 @@ export default StyleSheet.create({
     topUserImg1: {
         width: 80,
         height: 80,
+    },
+
+    headerBar: {
+        backgroundColor: '#1F2933',
+        position: 'absolute',
+        height: Constants.statusBarHeight + 60,
+        paddingTop: 22,
+        flexDirection: 'row',
+        top: 0,
+        right: 0,
+        left: 0
     },
 
 });
