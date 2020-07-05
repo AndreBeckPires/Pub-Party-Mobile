@@ -95,6 +95,7 @@ export default StyleSheet.create({
         borderRadius: 4,
         padding: 8
     },
+    
     dropdown: {
         width: '90%',
         marginBottom: 10,

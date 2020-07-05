@@ -34,8 +34,12 @@ export default function Home() {
   function navigateToBares(bares) {
     navigation.navigate('Bares', { bares });
   }
-  useEffect(() => {
 
+  function loadBares() {
+    setBares(data);
+  }
+
+  useEffect(() => {
     loadBares();
   }, []);
 
@@ -47,9 +51,7 @@ export default function Home() {
     }
 
   }
-  function loadBares() {
-    setBares(data);
-  }
+
   return (
     <View style={styles.container}>
       <View style={styles.headerBar}>
