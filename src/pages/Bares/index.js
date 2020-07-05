@@ -97,7 +97,6 @@ export default function Bares() {
         <MaterialCommunityIcons style={styles.group} name="account-group" />
       </TouchableOpacity>
 
-<<<<<<< HEAD
 
       <View >
         <Modal style={styles.modal} isVisible={isModalVisible}>
@@ -108,12 +107,6 @@ export default function Bares() {
 
           <Text style={styles.titleModal}>Forme sua party</Text>
 
-=======
-      <View style={{ flex: 1 }}>
-        <Modal isVisible={isModalVisible}>
-          <View style={{ flex: 1, backgroundColor: 'white' }}>
-            <Text>Forme sua party</Text>
->>>>>>> 697c8c56bd239552374039df5033649f679ab54b
 
         </Modal>
       </View>
