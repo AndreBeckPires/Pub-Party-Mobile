@@ -5,9 +5,11 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 import { useNavigation } from '@react-navigation/native'
 
 import styles from './styles';
-import ambevImg from '../../assets/ambev.png';
+
+import ambevImg from '../../assets/limpo.png';
 import lgbtImg from '../../assets/lgbt.png';
-import expensiveImg from '../../assets/expensive.png';
+import expensiveImg from '../../assets/barato.png';
+
 import barAmbev from '../../assets/barambev.jpg';
 import barLgbt from '../../assets/barlgbt.jpg';
 import barExpensive from '../../assets/barexpensive.jpg';
@@ -24,8 +26,9 @@ export default function Home() {
     { name: 'Bar do André', location: 'Cidade Baixa - Porto Alegre', lgbt: true, expensive: true, ambev: false, imgUrl: barAmbev },
     { name: 'Bar da Juliana', location: 'Cidade Baixa - Porto Alegre', lgbt: false, expensive: true, ambev: false, imgUrl: barExpensive },
     { name: 'Bar do Caio', location: 'Cidade Baixa - Porto Alegre', lgbt: false, expensive: true, ambev: true, imgUrl: barAmbev },
-    { name: 'Bar do Caio', location: 'Cidade Baixa - Porto Alegre', lgbt: false, expensive: true, ambev: true, imgUrl: barAmbev },
-    { name: 'Bar do Caio', location: 'Cidade Baixa - Porto Alegre', lgbt: false, expensive: true, ambev: true, imgUrl: barAmbev },
+    { name: 'Bar do Arthur', location: 'Cidade Baixa - Porto Alegre', lgbt: true, expensive: true, ambev: false, imgUrl: barLgbt },
+    { name: 'Bar do André', location: 'Cidade Baixa - Porto Alegre', lgbt: true, expensive: true, ambev: false, imgUrl: barAmbev },
+    { name: 'Bar da Juliana', location: 'Cidade Baixa - Porto Alegre', lgbt: false, expensive: true, ambev: false, imgUrl: barExpensive },
     { name: 'Bar do Caio', location: 'Cidade Baixa - Porto Alegre', lgbt: false, expensive: true, ambev: true, imgUrl: barAmbev },
   ];
 
@@ -49,7 +52,6 @@ export default function Home() {
     } else {
       setState({ show: true });
     }
-
   }
 
   return (

@@ -8,17 +8,10 @@ import DropDownPicker from 'react-native-dropdown-picker';
 import { TextInput } from 'react-native-paper';
 import styles from './styles';
 
-import ambevImg from '../../assets/ambev.png';
+import ambevImg from '../../assets/seloAmbev.png';
 import lgbtImg from '../../assets/lgbt.png';
-import expensiveImg from '../../assets/expensive.png';
+import expensiveImg from '../../assets/barato.png';
 import { ScrollView } from 'react-native-gesture-handler';
-
-
-
-
-
-
-
 
 Icon.loadFont();
 
@@ -47,13 +40,9 @@ export default function Bares() {
   const [expensive, setExpensive] = useState([false]);
   const bares = route.params.bares;
 
-
-
-
-
   useEffect(() => {
     ShowHideComponent();
-    
+
   }, []);
 
   function loadParties() {
@@ -63,7 +52,6 @@ export default function Bares() {
   useEffect(() => {
     loadParties();
   }, []);
-
 
   function ShowHideComponent() {
     if (bares.lgbt == true) {
@@ -98,42 +86,46 @@ export default function Bares() {
         </View>
         <View style={styles.texts}>
           <Text style={styles.textH1}>{bares.name}</Text>
-          <View style={{ flexDirection: 'row' }}>
-            {ambev.show ? (<Image isVisible={bares.ambev} source={ambevImg} />) : null}
-            {lgbt.show ? (<Image isVisible={bares.lgbt} source={lgbtImg} />) : null}
-            {expensive.show ? (<Image isVisible={bares.expensive} source={expensiveImg} />) : null}
+          <View style={styles.barBadges}>
+            {ambev.show ? (<Image style={styles.badge} isVisible={bares.ambev} source={ambevImg} />) : null}
+            {lgbt.show ? (<Image style={styles.badge} isVisible={bares.lgbt} source={lgbtImg} />) : null}
+            {expensive.show ? (<Image style={styles.badge} isVisible={bares.expensive} source={expensiveImg} />) : null}
           </View>
           <Text style={styles.text}>{bares.location}</Text>
         </View>
       </View>
 
-      <View style={styles.partyHeader}>
-        <Text style={styles.partyHeaderText}>Parties</Text>
-        <MaterialCommunityIcons style={styles.group} name="account-group" />
-      </View>
-
-      <FlatList
-        style={styles.partyList}
-        data={parties}
-        keyExtractor={(item, index) => index.toString()}
-        showsVerticalScrollIndicator={false}
-        onEndReachedThreshold={0.2}
-        numColumns={2}
-        renderItem={({ item: parties }) => (
-          <View style={styles.partiesView}>
-            <TouchableOpacity style={styles.partyCard}>
-              <Text style={styles.partyNameText}> {parties.name}</Text>
-              <Text style={styles.partyHourText}> {parties.hour}</Text>
-            </TouchableOpacity>
+      <ScrollView>
+        <View style={styles.scrollStyle}>
+          <View style={styles.partyHeader}>
+            <Text style={styles.partyHeaderText}>Parties</Text>
+            <MaterialCommunityIcons style={styles.group} name="account-group" />
           </View>
-        )}
-      />
+
+          <FlatList
+            style={styles.partyList}
+            data={parties}
+            keyExtractor={(item, index) => index.toString()}
+            showsVerticalScrollIndicator={false}
+            onEndReachedThreshold={0.2}
+            numColumns={2}
+            renderItem={({ item: parties }) => (
+              <View style={styles.partiesView}>
+                <TouchableOpacity style={styles.partyCard}>
+                  <Text style={styles.partyNameText}> {parties.name}</Text>
+                  <Text style={styles.partyHourText}> {parties.hour}</Text>
+                </TouchableOpacity>
+              </View>
+            )}
+          />
 
 
-      <TouchableOpacity style={styles.partyButton} onPress={() => showModal()}>
-        <Text style={styles.partyButtonText}>Criar Party</Text>
-        <MaterialCommunityIcons style={styles.group} name="account-group" />
-      </TouchableOpacity>
+          <TouchableOpacity style={styles.partyButton} onPress={() => showModal()}>
+            <Text style={styles.partyButtonText}>Criar Party</Text>
+            <MaterialCommunityIcons style={styles.group} name="account-group" />
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
 
       <View >
         <Modal style={styles.modal} isVisible={isModalVisible}>

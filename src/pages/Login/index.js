@@ -4,12 +4,11 @@ import { useNavigation } from '@react-navigation/native';
 import { TextInput } from 'react-native-paper';
 import DropDownPicker from 'react-native-dropdown-picker';
 
-
 import api from '../../services/api';
 
 import styles from './styles';
 
-import logo from '../../../assets/Beer-icon.png';
+import logo from '../../../assets/logoPubParty.png';
 
 export default function Home() {
     const navigation = useNavigation();
@@ -17,25 +16,25 @@ export default function Home() {
     const [password, setPassword] = React.useState('');
     const [type, setType] = React.useState('');
 
-    async function loginFunction() {      
-        
-        setType('bar');
-        console.log(user,password,type);
-        try{
-        const response = await api.post('sessions',  {
-            params: { user, password, type }
-        });
-        console.log(response);
-
-        navigateToPubPage();
-    } catch (err) {
-        alert('Falha no login, tente novamente')
+    async function loginFunction() {
+        try {
+            const response = await api.post('sessions', {
+                params: { user, password, type }
+            });
+            navigateToPubPage();
+        } catch (err) {
+            alert('Falha no login, tente novamente')
+        }
     }
 
+    function loginMock() {
+        if (type.type == 'Bar') {
+            navigateToPubPage();
+        } else if (type.type == 'Usuário') {
+            navigateToUserPage();
+        }
     }
 
-
-    
     function navigateToUserPage() {
         navigation.navigate('UserPage');
     }
@@ -44,9 +43,7 @@ export default function Home() {
         navigation.navigate('PubPage');
     }
 
-   
     return (
-        
         <View style={styles.container}>
             <View style={styles.buttonView}>
 
@@ -83,28 +80,15 @@ export default function Home() {
                     placeholder={"Escolha um tipo"}
                     containerStyle={styles.dropdown}
                     dropDownStyle={{ backgroundColor: '#D3CEC4' }}
-                    onChangeItem={item => setSelected({
-                        product: item.label,
+                    onChangeItem={item => setType({
+                        type: item.label,
                     })}
                 />
 
                 <TouchableOpacity
                     style={styles.buttons}
-                    onPress={() => loginFunction()}>
+                    onPress={() => loginMock()}>
                     <Text style={styles.buttonText}>Logar</Text>
-                </TouchableOpacity>
-
-
-                <TouchableOpacity
-                    style={styles.buttons}
-                    onPress={() => navigateToUserPage()}>
-                    <Text style={styles.buttonText}>Entrar como usuário</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity
-                    style={styles.buttons}
-                    onPress={() => navigateToPubPage()}>
-                    <Text style={styles.buttonText}>Entrar como Bar</Text>
                 </TouchableOpacity>
             </View>
         </View>

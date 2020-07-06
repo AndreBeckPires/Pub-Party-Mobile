@@ -105,7 +105,8 @@ export default StyleSheet.create({
         flexDirection: 'row',
         backgroundColor: '#FFAC2C',
         padding: 8,
-        borderRadius: 4
+        borderRadius: 4,
+        width: 200,
     },
 
     partyButtonText: {
@@ -199,8 +200,21 @@ export default StyleSheet.create({
         margin: 8
     },
 
-    partyList: {
-        height: 500
+    scrollStyle: {
+        justifyContent: 'center',
+        flex: 1,
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+    },
+
+    barBadges: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
+    badge: {
+        margin: 8
     }
 
 });

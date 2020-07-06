@@ -12,6 +12,8 @@ import Bares from './src/pages/Bares'
 
 const AppStack = createStackNavigator();
 
+console.disableYellowBox = true;
+
 export default function App() {
   return (
     <NavigationContainer>
