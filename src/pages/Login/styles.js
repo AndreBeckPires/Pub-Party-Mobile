@@ -14,12 +14,12 @@ export default StyleSheet.create({
         alignItems: 'center',
         paddingHorizontal: 24,
         paddingTop: Constants.statusBarHeight + 20,
-        backgroundColor: '#000'
+        backgroundColor: '#1F2933'
     },
 
     logoImage: {
-        width: 150,
-        height: 150,
+        width: 200,
+        height: 180,
         resizeMode: 'stretch',
         marginBottom: 50
     },

@@ -1,32 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Text, View, TouchableOpacity, Image } from 'react-native';
 import Leaderboard from 'react-native-leaderboard';
 
-import logoImg from '../../assets/user-icon.png';
-
 import styles from './styles';
 
-export default function PubRanking() {
+import logoImg from '../../assets/user-icon.png';
 
-  const [dados, setDados] = useState([]);
+export default function Ranking() {
+
+  const [dados, setDados] = useState(data);
 
   let data = [
-    { userName: 'Arthur', highScore: 80 },
-    { userName: 'André', highScore: 120 },
-    { userName: 'Juliana', highScore: 200 },
-    { userName: 'João', highScore: 150 },
-    { userName: 'Isa', highScore: 40 },
-    { userName: 'Caio', highScore: 100 },
-    { userName: 'Leticia', highScore: 60 },
-    { userName: 'Mateus', highScore: 20 },
+    { userName: 'Arthur', highScore: 80, imgUrl: 'https://www.pngkey.com/png/full/950-9501315_katie-notopoulos-katienotopoulos-i-write-about-tech-user.png' },
+    { userName: 'André', highScore: 120, imgUrl: 'https://www.pngkey.com/png/full/950-9501315_katie-notopoulos-katienotopoulos-i-write-about-tech-user.png' },
+    { userName: 'Juliana', highScore: 200, imgUrl: 'https://www.pngkey.com/png/full/950-9501315_katie-notopoulos-katienotopoulos-i-write-about-tech-user.png' },
+    { userName: 'João', highScore: 150, imgUrl: 'https://www.pngkey.com/png/full/950-9501315_katie-notopoulos-katienotopoulos-i-write-about-tech-user.png' },
+    { userName: 'Isa', highScore: 40, imgUrl: 'https://www.pngkey.com/png/full/950-9501315_katie-notopoulos-katienotopoulos-i-write-about-tech-user.png' },
+    { userName: 'Caio', highScore: 100, imgUrl: 'https://www.pngkey.com/png/full/950-9501315_katie-notopoulos-katienotopoulos-i-write-about-tech-user.png' },
+    { userName: 'Leticia', highScore: 60, imgUrl: 'https://www.pngkey.com/png/full/950-9501315_katie-notopoulos-katienotopoulos-i-write-about-tech-user.png' },
+    { userName: 'Mateus', highScore: 20, imgUrl: 'https://www.pngkey.com/png/full/950-9501315_katie-notopoulos-katienotopoulos-i-write-about-tech-user.png' },
   ];
 
   let dataAmigos = [
-    { userName: 'Arthur', highScore: 80 },
-    { userName: 'André', highScore: 120 },
-    { userName: 'Juliana', highScore: 200 },
-    { userName: 'Caio', highScore: 100 },
+    { userName: 'Arthur', highScore: 80, imgUrl: 'https://www.pngkey.com/png/full/950-9501315_katie-notopoulos-katienotopoulos-i-write-about-tech-user.png' },
+    { userName: 'André', highScore: 120, imgUrl: 'https://www.pngkey.com/png/full/950-9501315_katie-notopoulos-katienotopoulos-i-write-about-tech-user.png' },
+    { userName: 'Juliana', highScore: 200, imgUrl: 'https://www.pngkey.com/png/full/950-9501315_katie-notopoulos-katienotopoulos-i-write-about-tech-user.png' },
+    { userName: 'Caio', highScore: 100, imgUrl: 'https://www.pngkey.com/png/full/950-9501315_katie-notopoulos-katienotopoulos-i-write-about-tech-user.png' },
   ]
+
+  useEffect(() => {
+    loadRanking(data);
+  }, []);
 
   function loadRanking(data) {
     setDados(data);
